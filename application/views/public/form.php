@@ -14,6 +14,20 @@
 							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
+						<?php foreach ($questions as $row): ?>
+
+						<label><?=$row['the_question']?> </label>
+						<select name="questions[<?=$row['question_id']?>]" id="" class="form-control">
+							<?php foreach ($row['options_array'] as $row): ?>
+								<option value="<?=$row?>"><?=$row?></option>
+							<?php endforeach; ?>
+
+						</select>
+						<?php endforeach; ?>
+
+						</div>
+						
+						<div class="form-group">
 							<input type="submit" class="btn btn-primary btn-block" value="Proses">
 						</div>
 					</form>
